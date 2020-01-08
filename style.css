@@ -9,11 +9,27 @@ body{
     grid-gap:15px;
 }
 
+#View .files{
+    text-align: right;
+}
+
 h1{
     padding:15px;
     font-family: 'Lato';
 }
 h1 > a{
+    color:black;
+    text-decoration: none;
+}
+
+.btn{
+    font-family: 'Lato';
+    display:inline-block;
+    margin:5px;
+    padding:5px;
+    background-color:white;
+    text-transform: uppercase;
+    font-weight: bold;
     color:black;
     text-decoration: none;
 }
