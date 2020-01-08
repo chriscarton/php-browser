@@ -1,0 +1,49 @@
+body{
+    min-height:100vh;
+    background-color:rgb(243, 243, 243);
+}
+#Main{
+    padding:15px;
+    display:grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-gap:15px;
+}
+
+h1{
+    padding:15px;
+    font-family: 'Lato';
+}
+h1 > a{
+    color:black;
+    text-decoration: none;
+}
+
+a.thumbnail{
+    background-color:white;
+    display:flex;
+    flex-direction:column;
+    justify-content: center;
+    align-items: center;
+    padding:10px;
+}
+img{
+    max-width: 100%;
+    height:auto;
+}
+
+a.thumbnail-folder{
+    background-image:url('big-folder.png');
+    background-size:contain;
+    background-position:center center;
+    background-repeat:no-repeat;
+}
+
+a.thumbnail-folder img{
+    max-width:50%;
+}
+
+a.thumbnail{
+    font-family:'Ubuntu mono';
+    color:black;
+    text-decoration: none;
+}
