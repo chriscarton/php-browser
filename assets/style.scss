@@ -7,7 +7,7 @@ body{
 #Main{
     padding:15px;
     display:grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr ;
     grid-gap:15px;
 }
 
@@ -35,17 +35,38 @@ h1 > a{
     text-decoration: none;
 }
 
-a.thumbnail{
+.thumbnail{
     background-color:white;
-    display:flex;
-    flex-direction:column;
-    justify-content: center;
+    display:grid;
+    grid-template-rows: auto auto;
     align-items: center;
-    padding:10px;
+    
 }
 img{
     max-width: 100%;
     height:auto;
+    display:block;
+}
+
+.cartouche{
+    border:1px solid silver;
+    align-self: end;
+    
+    display:flex;
+    align-items: center;
+}
+
+.icon{
+    width:50px;
+    height:50px;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    border-right:1px solid silver;
+}
+
+.name{
+    padding:5px;
 }
 
 a.thumbnail-folder{

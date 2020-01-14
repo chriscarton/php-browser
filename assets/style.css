@@ -1,0 +1,105 @@
+body {
+  min-height: 100vh;
+  background-color: #f3f3f3;
+  font-family: 'Lato';
+}
+
+#Main {
+  padding: 15px;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr 1fr 1fr 1fr;
+      grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  grid-gap: 15px;
+}
+
+#View .files {
+  text-align: right;
+}
+
+h1 {
+  padding: 15px;
+}
+
+h1 > a {
+  color: black;
+  text-decoration: none;
+}
+
+.btn {
+  font-family: 'Lato';
+  display: inline-block;
+  margin: 5px;
+  padding: 5px;
+  background-color: white;
+  text-transform: uppercase;
+  font-weight: bold;
+  color: black;
+  text-decoration: none;
+}
+
+.thumbnail {
+  background-color: white;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-rows: auto auto;
+      grid-template-rows: auto auto;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+.cartouche {
+  border: 1px solid silver;
+  -ms-flex-item-align: end;
+      align-self: end;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.icon {
+  width: 50px;
+  height: 50px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  border-right: 1px solid silver;
+}
+
+.name {
+  padding: 5px;
+}
+
+a.thumbnail-folder {
+  background-image: url("big-folder.png");
+  background-size: contain;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+
+a.thumbnail-folder img {
+  max-width: 50%;
+}
+
+a.thumbnail {
+  font-family: 'Ubuntu mono';
+  color: black;
+  text-decoration: none;
+}
+/*# sourceMappingURL=style.css.map */

@@ -18,37 +18,52 @@ $results = [];
         if ($file->isDir() && $file->getFilename() != '.git'){ 
             if(!$file->isDot()){
             ?>
-            <a 
-                class="thumbnail thumbnail-folder"
-                href="index.php?p=<?= $file->getPathname() ?>"
+            <div
+                class="thumbnail"
             >
-                <?php
-                $raa = new IteratorIterator(new DirectoryIterator($file->getPathname()));
                 
-                $child_images = [];
-                foreach($raa as $child):
-                    if($child->isFile()):
-                        if($child->getExtension() === 'jpg' || $child->getExtension() === 'png'):
-                            ob_start();
-                            ?>
-                            <img src="<?= $child->getPathname() ?>" alt="">
-                            <?php
-                            $child_images[] = ob_get_clean();
-                        endif;
-                    endif;
-                endforeach;
-
-                //Pour afficher juste la première image du dossier. 
-                if(!empty($child_images[0])){
-                    echo $child_images[0];
-                }else{
-                    ?>
-                    <!-- <img src="http://localhost/bibliotheque-graphique/folder.png" alt=""> -->
                     <?php
-                }
-                ?>
-                <?php echo $file->getFilename(); ?>
-            </a>
+                    $raa = new IteratorIterator(new DirectoryIterator($file->getPathname()));
+                    
+                    $child_images = [];
+                    foreach($raa as $child):
+                        if($child->isFile()):
+                            if($child->getExtension() === 'jpg' || $child->getExtension() === 'png'):
+                                ob_start();
+                                ?>
+                                <img src="<?= $child->getPathname() ?>" alt="">
+                                <?php
+                                $child_images[] = ob_get_clean();
+                            endif;
+                        endif;
+                    endforeach;
+
+                    //Pour afficher juste la toute première image du dossier. 
+                    if(!empty($child_images[0])){
+
+
+                        ?>
+                        <a 
+                            href="index.php?p=<?= $file->getPathname() ?>"
+                        >
+
+                        <?= $child_images[0] ?>
+                        </a>
+                        <?php
+
+
+                    }
+                    ?>
+                
+                <div class="cartouche">
+                    <div class="icon">
+                        <img src="assets/folder.svg" alt="">
+                    </div>
+                    <div class="name">
+                        <?php echo $file->getFilename(); ?>
+                    </div>
+                </div>
+            </div>
             <?php
             }
 
@@ -56,12 +71,14 @@ $results = [];
         }else{
             if($file->getExtension() === 'jpg' || $file->getExtension() === 'png'){
             ?>
+            <div>
             <a 
                 class="thumbnail thumbnail-file"
                 href="index.php?f=<?= $file->getPathname() ?>"
             >
                 <img src="<?= $file->getPathname() ?>" alt="">    
             </a>
+            </div>
             <?php
             }
         }

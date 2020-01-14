@@ -32,5 +32,4 @@ if(!empty($_GET['f'])){
 
 }else{
     require_once('browse.php');
-    //Include ici
 }
