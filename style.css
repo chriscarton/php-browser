@@ -1,6 +1,8 @@
 body{
     min-height:100vh;
     background-color:rgb(243, 243, 243);
+    font-family: 'Lato';
+
 }
 #Main{
     padding:15px;
@@ -15,7 +17,6 @@ body{
 
 h1{
     padding:15px;
-    font-family: 'Lato';
 }
 h1 > a{
     color:black;

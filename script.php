@@ -7,13 +7,11 @@ if(!empty($_GET['f'])){
 
     $file_without_ext = str_replace($ext,'',$file);
     
-    $explode = explode('/',$file);
+    //Slash ou anti-slash en cas de windows...
+    $explode = explode('\\',$file);
     $filename = end($explode);
     $folder = str_replace($filename,'',$file);
 
-    //print_r($_GET['f']);
-    
-    
     $rii = new IteratorIterator(new DirectoryIterator($folder));
 
     $other_files = [];
