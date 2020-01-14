@@ -1,14 +1,70 @@
+@mixin flexCenter(){
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 body{
     min-height:100vh;
     background-color:rgb(243, 243, 243);
     font-family: 'Lato';
 
 }
+img{
+    max-width: 100%;
+    height:auto;
+    display:block;
+}
+a{
+    color:black;
+    text-decoration: none;
+}
 #Main{
     padding:15px;
     display:grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr ;
     grid-gap:15px;
+    @media screen and (min-width:600px){
+        grid-template-columns:1fr 1fr 1fr;
+    }
+    @media screen and (min-width:1200px){
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    }
+
+    .thumbnail{
+        background-color:white;
+        display:grid;
+        grid-template-rows: 1fr auto;
+        .img-container{
+            @include flexCenter();
+        }
+        
+
+        .cartouche{
+            border:1px solid silver;
+            align-self: end;
+            
+            display:flex;
+            align-items: center;
+
+            .icon{
+                width:50px;
+                height:50px;
+                display:flex;
+                align-items: center;
+                justify-content: center;
+                border-right:1px solid silver;
+            }
+            
+            .name{
+                padding:5px;
+            }
+
+        }
+
+        
+    }
+
+
 }
 
 #View .files{
@@ -17,10 +73,7 @@ body{
 
 h1{
     padding:15px;
-}
-h1 > a{
-    color:black;
-    text-decoration: none;
+    
 }
 
 .btn{
@@ -35,40 +88,9 @@ h1 > a{
     text-decoration: none;
 }
 
-.thumbnail{
-    background-color:white;
-    display:grid;
-    grid-template-rows: auto auto;
-    align-items: center;
-    
-}
-img{
-    max-width: 100%;
-    height:auto;
-    display:block;
-}
 
-.cartouche{
-    border:1px solid silver;
-    align-self: end;
-    
-    display:flex;
-    align-items: center;
-}
 
-.icon{
-    width:50px;
-    height:50px;
-    display:flex;
-    align-items: center;
-    justify-content: center;
-    border-right:1px solid silver;
-}
-
-.name{
-    padding:5px;
-}
-
+/*
 a.thumbnail-folder{
     background-image:url('big-folder.png');
     background-size:contain;
@@ -85,3 +107,4 @@ a.thumbnail{
     color:black;
     text-decoration: none;
 }
+*/

@@ -8,11 +8,11 @@ if(!empty($_GET['p'])){
 $rii = new IteratorIterator(new DirectoryIterator($p));
 
 $results = []; 
+
 ?>
 <div id="Main">
     <?php
     foreach ($rii as $file) {
-
 
         //DOSSIER
         if ($file->isDir() && $file->getFilename() != '.git'){ 
@@ -45,6 +45,7 @@ $results = [];
                         ?>
                         <a 
                             href="index.php?p=<?= $file->getPathname() ?>"
+                            class="img-container"
                         >
 
                         <?= $child_images[0] ?>
@@ -60,7 +61,11 @@ $results = [];
                         <img src="assets/folder.svg" alt="">
                     </div>
                     <div class="name">
+                        <a 
+                            href="index.php?p=<?= $file->getPathname() ?>"
+                        >
                         <?php echo $file->getFilename(); ?>
+                        </a>
                     </div>
                 </div>
             </div>
